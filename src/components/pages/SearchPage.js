@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MainPage extends React.SearchPage {
+class SearchPage extends React.SearchPage {
   render() {
     return(
       <p>Search</p>
