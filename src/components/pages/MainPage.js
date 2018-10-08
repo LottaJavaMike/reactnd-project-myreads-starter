@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Shelf from '../Shelf';
+import Book from './Book';
 
 class MainPage extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class MainPage extends React.Component {
         </div>
         <div className="list-books-content">
           <div>
-            
+
 
           </div>
         </div>
