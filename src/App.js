@@ -4,12 +4,10 @@ import './App.css'
 import { Route } from 'react-router-dom'
 import MainPage from './components/pages/MainPage';
 class BooksApp extends React.Component {
-
-
   render() {
     return (
       <div>
-        <route exact path="/" component={ MainPage } />
+        <Route exact path="/" component={ MainPage } />
       </div>
     );
 
