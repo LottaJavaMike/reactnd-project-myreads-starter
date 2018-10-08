@@ -7,11 +7,11 @@ class BooksApp extends React.Component {
 
 
   render() {
-    return {
+    return (
       <div>
         <route exact path="/" component={ MainPage } />
       </div>
-    };
+    );
 
 
 
