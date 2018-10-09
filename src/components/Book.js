@@ -4,17 +4,15 @@ import Shelf from './Shelf';
 import * as BooksAPI from '../BooksAPI';
 
 class Book extends React.Component {
-  componentDidMount() {
-    console.log(this);
-  }
+
   render() {
     return(
       <li>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail}")` }}></div>
+            <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ""}")` }}></div>
             <div className="book-shelf-changer">
-              <select>
+              <select value={this.props.book.shelf || "none"} onChange={(e) => (this.props.updateBook(this.props.book, e.target.value) )}>
                 <option value="move" disabled>Move to...</option>
                 <option value="currentlyReading">Currently Reading</option>
                 <option value="wantToRead">Want to Read</option>
