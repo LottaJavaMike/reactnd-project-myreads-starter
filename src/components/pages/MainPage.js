@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Shelf from '../Shelf';
-
+import * as BooksAPI from '../../BooksAPI'
 
 class MainPage extends React.Component {
+  componentDidMount() {
+    BooksAPI.getAll()
+    .then(resp => {
+      console.log(resp);
+    });
+  }
   render() {
     return(
       <div className="list-books">
