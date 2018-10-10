@@ -13,7 +13,6 @@ class SearchPage extends React.Component {
     }
   }
 
-
   componentDidMount() {
     BooksAPI.getAll()
     .then(resp => {
@@ -34,6 +33,7 @@ class SearchPage extends React.Component {
     }
     else {
     BooksAPI.search(this.state.query.trim()).then(res => {
+//leaving the console.log to show the results we are getting
       console.log(res);
       if(res.error) {
         return this.setState({results: [] });
