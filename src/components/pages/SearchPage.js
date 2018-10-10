@@ -20,6 +20,25 @@ class SearchPage extends React.Component {
     });
   }
 
+  updateQuery = (query) => {
+    this.setState({query: query}, this.submitSearch);
+  }
+
+  submitSearch() {
+    if(this.state.query === '' || this.state.query === undefined) {
+      return this.setState({results: []});
+    }
+    BookAPI.search(this.state.query.trim())
+    .then(res => {
+      if(res.error) {
+        return this.setState({results: [] });
+      }
+      else {
+        return this.setState({resutls: res });
+      }
+    });
+  }
+
   updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
     .then(resp => {
